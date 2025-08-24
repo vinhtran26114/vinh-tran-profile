@@ -1,7 +1,14 @@
 .about-page {
   .about-container {
     margin: 0 auto;
-    padding: 0;
+    padding: 0 1rem 2rem;
     width: 100%;
+  }
+
+  .about-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
   }
 }

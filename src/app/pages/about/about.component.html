@@ -1,5 +1,7 @@
 <div [class]="config.className">
   <div class="about-container" [style.maxWidth.px]="config.maxWidth">
+    <app-section-header title="ABOUT" icon="user"></app-section-header>
+
     <!-- Personal Info Section -->
     <app-personal-info [info]="cv()?.personalInfo"></app-personal-info>
   </div>

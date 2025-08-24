@@ -12,6 +12,12 @@
   "ACTIONS": {
     "EXPORT_PDF": "Xuất PDF"
   },
+  "COMMON": {
+    "PRESENT": "Hiện tại",
+    "LOADING": "Đang tải...",
+    "ERROR": "Lỗi",
+    "RETRY": "Thử lại"
+  },
   "PERSONAL_INFO": {
     "PROFESSIONAL_SUMMARY": "Tóm tắt chuyên môn",
     "LANGUAGES": "Ngôn ngữ",
@@ -23,7 +29,8 @@
       "TITLE": "Kinh nghiệm làm việc",
       "NOTABLE_ACHIEVEMENTS": "Thành tựu & Tác động nổi bật",
       "CORE_RESPONSIBILITIES": "Chuyên môn & Trách nhiệm chính",
-      "ABOUT_COMPANY": "Thông tin công ty"
+      "ABOUT_COMPANY": "Thông tin công ty",
+      "POSITIONS": "Vị trí"
     },
     "EDUCATION": "Học vấn",
     "TECHNICAL_SKILLS": "Kỹ năng chuyên môn",

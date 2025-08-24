@@ -24,23 +24,37 @@
     <!-- Contact Grid -->
     <div class="contact-grid">
       <a class="contact-item" [href]="'mailto:' + info?.contact?.email">
-        <span nz-icon nzType="mail" nzTheme="outline"></span>
+        <span class="icon-wrap"><span nz-icon nzType="mail" nzTheme="outline"></span></span>
         <div class="contact-details">
           <span class="label">Email</span>
           <span class="value">{{ info?.contact?.email }}</span>
         </div>
+        <div class="actions">
+          <button nz-button nzSize="small" nzType="default"
+                  nz-tooltip [nzTooltipTitle]="copiedEmail ? 'Copied!' : 'Copy'"
+                  (click)="$event.preventDefault(); $event.stopPropagation(); copyToClipboard(info?.contact?.email || '', 'email')">
+            <span nz-icon nzType="copy" nzTheme="outline"></span>
+          </button>
+        </div>
       </a>
 
       <a class="contact-item" [href]="'tel:' + info?.contact?.phone">
-        <span nz-icon nzType="phone" nzTheme="outline"></span>
+        <span class="icon-wrap"><span nz-icon nzType="phone" nzTheme="outline"></span></span>
         <div class="contact-details">
           <span class="label">Phone</span>
           <span class="value">{{ info?.contact?.phone }}</span>
         </div>
+        <div class="actions">
+          <button nz-button nzSize="small" nzType="default"
+                  nz-tooltip [nzTooltipTitle]="copiedPhone ? 'Copied!' : 'Copy'"
+                  (click)="$event.preventDefault(); $event.stopPropagation(); copyToClipboard(info?.contact?.phone || '', 'phone')">
+            <span nz-icon nzType="copy" nzTheme="outline"></span>
+          </button>
+        </div>
       </a>
 
       <a class="contact-item" [href]="info?.contact?.linkedin" target="_blank">
-        <span nz-icon nzType="linkedin" nzTheme="outline"></span>
+        <span class="icon-wrap"><span nz-icon nzType="linkedin" nzTheme="outline"></span></span>
         <div class="contact-details">
           <span class="label">LinkedIn</span>
           <span class="value">{{ info?.contact?.linkedin }}</span>

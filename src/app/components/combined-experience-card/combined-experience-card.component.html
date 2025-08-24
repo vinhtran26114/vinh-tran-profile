@@ -1,0 +1,176 @@
+<div class="combined-experience-card" (click)="openCompanyDialog()">
+  <div class="card-header">
+    <div class="company-info">
+      <div class="company-logo">
+        <img [src]="'assets/images/companies/' + getCompanyLogo(companyExperience.company)" 
+             [alt]="companyExperience.company + ' logo'" 
+             onError="this.src='assets/images/companies/default-company.svg'"/>
+      </div>
+      <div class="position-company">
+        <h3>{{ getCurrentPosition() }}</h3>
+        <div class="company">{{ companyExperience.company }}</div>
+        <div class="position-count">
+          <span nz-icon nzType="solution" nzTheme="outline"></span>
+          {{ companyExperience.positions.length }} position{{ companyExperience.positions.length > 1 ? 's' : '' }}
+        </div>
+      </div>
+    </div>
+    <div class="meta-info">
+      <div class="meta-item">
+        <span nz-icon nzType="calendar" nzTheme="outline"></span>
+        {{ getTotalDuration() }}
+      </div>
+      <div class="meta-item">
+        <span nz-icon nzType="environment" nzTheme="outline"></span>
+        Remote
+      </div>
+      <div class="meta-item">
+        <span nz-icon nzType="team" nzTheme="outline"></span>
+        Full-time
+      </div>
+    </div>
+  </div>
+
+  <div class="decorative-line"></div>
+
+  <div class="card-content">
+    <!-- Position Timeline -->
+    <div class="positions-timeline">
+      <h4>{{ 'SECTIONS.WORK_EXPERIENCE.POSITIONS' | translate }}</h4>
+      <div class="timeline">
+        @for (position of companyExperience.positions; track position; let i = $index) {
+          <div class="timeline-item" [class.current]="position.current">
+            <div class="timeline-marker">
+              @if (position.current) {
+                <span nz-icon nzType="check-circle" nzTheme="outline"></span>
+              } @else {
+                <span nz-icon nzType="circle" nzTheme="outline"></span>
+              }
+            </div>
+            <div class="timeline-content">
+              <div class="position-title">{{ position.position }}</div>
+              <div class="position-duration">{{ position.startDate }} - {{ position.current ? ('COMMON.PRESENT' | translate) : position.endDate }}</div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Combined Achievements -->
+    <div class="achievements">
+      <h4>{{ 'SECTIONS.WORK_EXPERIENCE.NOTABLE_ACHIEVEMENTS' | translate }}</h4>
+      <ul>
+        @for (position of companyExperience.positions; track position) {
+          @for (achievement of position.achievements; track achievement) {
+            <li>
+              <span nz-icon nzType="trophy" nzTheme="outline"></span>
+              <span class="achievement-text">{{ achievement }}</span>
+              <nz-tag [nzColor]="'blue'" class="position-tag">{{ position.position }}</nz-tag>
+            </li>
+          }
+        }
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Company Detail Dialog -->
+<ng-template #companyDetailDialog>
+  <div class="company-detail-dialog">
+    <app-watermark class="dialog-watermark" [customIcon]="'bank'"></app-watermark>
+
+    <div class="dialog-header">
+      <div class="company-logo">
+        <img [src]="'assets/images/companies/' + getCompanyLogo(companyExperience.company)"
+             [alt]="companyExperience.company + ' logo'"
+             onError="this.src='assets/images/companies/default-company.svg'"/>
+      </div>
+      <div class="company-info">
+        <h2>{{ companyExperience.company }}</h2>
+        <div class="meta-info">
+          <div class="duration">
+            <span nz-icon nzType="calendar" nzTheme="outline"></span>
+            {{ getTotalDuration() }}
+          </div>
+          <div class="meta-tags">
+            <nz-tag [nzColor]="'blue'">Full-time</nz-tag>
+            <nz-tag [nzColor]="'green'">Remote</nz-tag>
+            <nz-tag [nzColor]="'purple'">{{ companyExperience.positions.length }} Position{{ companyExperience.positions.length > 1 ? 's' : '' }}</nz-tag>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    @for (position of companyExperience.positions; track position) {
+      <div class="dialog-section position-detail">
+        <h3 class="position-header">
+          <span nz-icon nzType="solution" nzTheme="outline"></span>
+          {{ position.position }}
+          @if (position.current) {
+            <nz-tag [nzColor]="'green'">{{ 'COMMON.PRESENT' | translate }}</nz-tag>
+          }
+        </h3>
+        <div class="position-meta">
+          <nz-tag [nzColor]="'blue'">{{ position.startDate }} - {{ position.current ? ('COMMON.PRESENT' | translate) : position.endDate }}</nz-tag>
+          <nz-tag [nzColor]="'orange'">{{ position.location }}</nz-tag>
+        </div>
+
+        @if (position.responsibilities?.length) {
+          <div class="responsibilities">
+            <h4>
+              <span nz-icon nzType="check-circle" nzTheme="outline"></span>
+              {{ 'SECTIONS.WORK_EXPERIENCE.CORE_RESPONSIBILITIES' | translate }}
+            </h4>
+            <ul>
+              @for (responsibility of position.responsibilities; track responsibility) {
+                <li>{{ responsibility }}</li>
+              }
+            </ul>
+          </div>
+        }
+
+        @if (position.achievements?.length) {
+          <div class="achievements">
+            <h4>
+              <span nz-icon nzType="trophy" nzTheme="outline"></span>
+              {{ 'SECTIONS.WORK_EXPERIENCE.NOTABLE_ACHIEVEMENTS' | translate }}
+            </h4>
+            <ul>
+              @for (achievement of position.achievements; track achievement) {
+                <li>{{ achievement }}</li>
+              }
+            </ul>
+          </div>
+        }
+      </div>
+    }
+
+    @if (companyExperience.companyInfo) {
+      <div class="dialog-section company-details">
+        <h3>
+          <span nz-icon nzType="bank" nzTheme="outline"></span>
+          {{ 'SECTIONS.WORK_EXPERIENCE.ABOUT_COMPANY' | translate }}
+        </h3>
+        <div class="company-description">
+          {{ companyExperience.companyInfo.description }}
+        </div>
+        <div class="company-contact-info">
+          <div class="contact-item">
+            <span nz-icon nzType="environment" nzTheme="outline"></span>
+            <strong>Address:</strong> {{ companyExperience.companyInfo.address }}
+          </div>
+          <div class="contact-item">
+            <span nz-icon nzType="global" nzTheme="outline"></span>
+            <strong>Website:</strong> <a [href]="companyExperience.companyInfo.website" target="_blank">{{ companyExperience.companyInfo.website }}</a>
+          </div>
+          @if (companyExperience.companyInfo.contact) {
+            <div class="contact-item">
+              <span nz-icon nzType="phone" nzTheme="outline"></span>
+              <strong>Phone:</strong> {{ companyExperience.companyInfo.contact }}
+            </div>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</ng-template>

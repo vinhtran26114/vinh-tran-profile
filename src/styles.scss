@@ -3,18 +3,33 @@
 @import "/node_modules/ng-zorro-antd/ng-zorro-antd.min.css";
 
 :root {
+  /* Brand & palette */
   --primary-color: #0066cc;
   --primary-light: #3399ff;
   --primary-lighter: #66b3ff;
   --primary-lightest: #e6f3ff;
+  --success-color: #52c41a;
+  --warning-color: #faad14;
+  --error-color: #ff4d4f;
+
+  /* Text & surfaces */
   --text-color: #1f2937;
+  --text-color-secondary: #6b7280;
   --text-light: #4b5563;
   --background: #f0f7ff;
+  --background-color: #f8fafc;
+  --component-background: #ffffff;
   --card-bg: rgba(255, 255, 255, 0.9);
+  --border-color: #e5e7eb;
+  --heading-color: #0f172a;
+
+  /* Radii & shadows */
   --border-radius: 12px;
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  /* Backwards compat */
+  --card-shadow: var(--shadow);
 }
 
 html {
@@ -25,7 +40,9 @@ html {
 
 body {
   margin: 0;
-  background-color: #f0f7ff;
+  background: radial-gradient(1200px 800px at 10% -10%, #e6f3ff 0%, transparent 60%),
+              radial-gradient(1000px 600px at 100% 0%, #f0f7ff 0%, transparent 60%),
+              var(--background);
   min-height: 100vh;
   position: relative;
   font-family: $primary-font;
@@ -48,7 +65,7 @@ body {
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--border-color);
   transition: all 0.3s ease;
 
   &:hover {
@@ -69,13 +86,21 @@ body {
     padding-bottom: 1rem;
 
     h2 {
-      color: var(--primary-color);
+      color: var(--heading-color);
       font-size: 1.5rem;
       font-weight: 600;
       margin: 0;
     }
   }
 }
+
+/* Base typography */
+h1, h2, h3, h4, h5 {
+  color: var(--heading-color);
+  margin-top: 0;
+}
+p { color: var(--text-color); }
+small, .text-muted { color: var(--text-color-secondary); }
 
 // Grid system
 .grid {
@@ -186,7 +211,7 @@ a {
   transition: all 0.2s ease;
 
   &:hover {
-    color: darken(#2563eb, 10%);
+    color: #004c99;
   }
 }
 
@@ -211,7 +236,30 @@ a {
 .mb-2 { margin-bottom: 0.5rem; }
 .mb-4 { margin-bottom: 1rem; }
 .mb-8 { margin-bottom: 2rem; }
-.ant-modal-body {padding: 0;}
+/* Ant Design fine-tuning */
+.ant-btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+.ant-btn-primary:hover,
+.ant-btn-primary:focus {
+  background-color: #005bb5;
+  border-color: #005bb5;
+}
+
+.ant-input,
+.ant-input-affix-wrapper {
+  border-radius: 8px;
+}
+.ant-input:focus,
+.ant-input-affix-wrapper-focused {
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.15);
+  border-color: var(--primary-color);
+}
+
+.ant-tag {
+  border-radius: 999px;
+}
 
 // Avatar modal styles
 .avatar-modal {

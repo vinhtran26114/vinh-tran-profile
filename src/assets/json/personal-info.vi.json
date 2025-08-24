@@ -23,7 +23,7 @@
       "level": "Khả năng làm việc tốt"
     }
   ],
-  "summary": "Chuyên viên phân tích hệ thống kinh doanh với kinh nghiệm trong việc chuyển đổi yêu cầu kinh doanh thành hệ thống hoạt động. Tôi viết yêu cầu rõ ràng và tiêu chí chấp nhận, sử dụng SQL để xác minh dữ liệu, và giữ cho Billing, EDI, Ops và Dev đồng bộ. Dẫn dắt Dự án Chuyển đổi Tài khoản phải thu năm 2023 với CES Vietnam và Capco. Hiện đang dẫn dắt thiết kế lại logic Chuyển đổi quyền sở hữu để thắt chặt độ chính xác của hóa đơn. Trước đây là nhà phát triển .NET và JavaScript; tôi vẫn sử dụng nền tảng đó để thiết kế các tích hợp thực tế.",
+  "summary": "Chuyên viên phân tích hệ thống kinh doanh tập trung vào việc làm cho hệ thống hóa đơn và EDI vận hành ổn định giữa các nhóm. Tôi chuyển các quy tắc phức tạp thành BR/AC rõ ràng, xác minh bằng SQL và giữ Billing, EDI, Ops và Dev phối hợp nhịp nhàng. Dự án Chuyển đổi Tài khoản phải thu (2023, CES Vietnam và Capco) đã hoàn tất và đi vào vận hành ổn định. Thiết kế lại logic Chuyển đổi quyền sở hữu đã được bàn giao và đang duy trì để bảo vệ độ chính xác của hóa đơn. Với nền tảng .NET và JavaScript, tôi thiết kế các tích hợp thực dụng và xác minh kết quả thay vì giả định.",
   "shortSummary": "Chuyên viên phân tích hệ thống kinh doanh với chuyên môn về hệ thống thanh toán và EDI. Tập trung mạnh vào tích hợp, xác thực dữ liệu và cải thiện quy trình.",
   "interests": [
     "Tích hợp",

@@ -6,9 +6,33 @@
       subtitle="SECTIONS.SUBTITLES.TECHNICAL_SKILLS">
     </app-section-header>
 
+    <!-- Controls -->
+    <div class="skills-controls">
+      <div class="search">
+        <input nz-input [ngModel]="searchTerm" (ngModelChange)="onSearchChange($event)" placeholder="Search skills..." />
+      </div>
+      <div class="toggles">
+        <label class="toggle">
+          <span>Sort A–Z</span>
+          <nz-switch [(ngModel)]="sortAlphabetically"></nz-switch>
+        </label>
+        <button nz-button nzType="default" (click)="copyVisibleSkills()">
+          <span nz-icon nzType="copy" nzTheme="outline"></span>
+          Copy visible
+        </button>
+        @if (justCopied) {
+          <span class="copied">Copied</span>
+        }
+      </div>
+    </div>
+
     <div class="skills-layout">
       <!-- Left Column: Word Cloud -->
       <div class="word-cloud-column" #wordCloudContainer>
+        <div class="word-cloud-header">
+          <span nz-icon nzType="cluster" nzTheme="outline"></span>
+          <span>Skills Pool</span>
+        </div>
         <div class="word-cloud-container">
           <canvas #wordCloud></canvas>
         </div>
@@ -16,27 +40,35 @@
 
       <!-- Right Column: Skills List -->
       <div class="skills-column">
-        @for (category of Object.keys(cv()?.skills?.technicalSkills || {}); track category) {
-          <div class="skill-section">
-            <div class="section-header">
-              <span nz-icon [nzType]="getTechnologyIcon(category)" nzTheme="outline"></span>
-              <h3>{{ formatCategory(category) }}</h3>
-            </div>
-            <div class="skill-tags">
-              @for (skill of cv()?.skills?.technicalSkills?.[category]; track skill) {
-                <div class="skill-tag" 
-                  [class.with-experience]="getSkillExperience(skill)"
-                  [style.borderColor]="getTagColor(skill)">
-                  <span class="skill-name">{{ skill }}</span>
-                  @if (getSkillExperience(skill)) {
-                    <span class="experience" [style.backgroundColor]="getTagColor(skill)">
-                      {{ getSkillExperience(skill) }}
-                    </span>
+        @for (category of getCategories(); track category) {
+          @if (hasAnyMatch(category)) {
+            <div class="skill-section" [attr.id]="'skill-cat-' + category" [class.collapsed]="!isExpanded(category)">
+              <div class="section-header" (click)="toggleCategory(category)" role="button" tabindex="0">
+                <span nz-icon [nzType]="isExpanded(category) ? 'down' : 'right'" nzTheme="outline"></span>
+                <span nz-icon class="category-icon" [nzType]="getTechnologyIcon(category)" nzTheme="outline"></span>
+                <h3>{{ formatCategory(category) }}</h3>
+                <span class="count">{{ getFilteredSkills(category).length }}</span>
+              </div>
+              @if (isExpanded(category)) {
+                <div class="skill-tags">
+                  @for (skill of getFilteredSkills(category); track skill) {
+                    <div class="skill-tag" 
+                      nz-tooltip
+                      [nzTooltipTitle]="formatCategory(category) + ' • ' + (getSkillExperience(skill) || 'Experience varies')"
+                      [class.with-experience]="getSkillExperience(skill)"
+                      [style.borderColor]="getTagColor(skill)">
+                      <span class="skill-name" [innerHTML]="highlight(skill)"></span>
+                      @if (getSkillExperience(skill)) {
+                        <span class="experience" [style.backgroundColor]="getTagColor(skill)">
+                          {{ getSkillExperience(skill) }}
+                        </span>
+                      }
+                    </div>
                   }
                 </div>
               }
             </div>
-          </div>
+          }
         }
       </div>
     </div>

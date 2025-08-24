@@ -29,7 +29,7 @@ export class CVService {
   get isLoading() { return this.loading.asReadonly(); }
   get hasError() { return this.error.asReadonly(); }
 
-  private loadCV() {
+  loadCV() {
     this.loading.set(true);
     this.error.set(null);
 

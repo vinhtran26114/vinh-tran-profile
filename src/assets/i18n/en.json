@@ -13,6 +13,12 @@
   "ACTIONS": {
     "EXPORT_PDF": "Export PDF"
   },
+  "COMMON": {
+    "PRESENT": "Present",
+    "LOADING": "Loading...",
+    "ERROR": "Error",
+    "RETRY": "Retry"
+  },
   "PERSONAL_INFO": {
     "PROFESSIONAL_SUMMARY": "Professional Summary",
     "LANGUAGES": "Languages",
@@ -24,7 +30,8 @@
       "TITLE": "Work Experience",
       "NOTABLE_ACHIEVEMENTS": "Notable Impact & Achievements",
       "CORE_RESPONSIBILITIES": "Core Expertise & Responsibilities",
-      "ABOUT_COMPANY": "About Company"
+      "ABOUT_COMPANY": "About Company",
+      "POSITIONS": "Positions"
     },
     "EDUCATION": "Education",
     "TECHNICAL_SKILLS": "Technical Skills",

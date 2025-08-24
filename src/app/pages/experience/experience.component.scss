@@ -10,18 +10,64 @@
       background-color: var(--component-background);
       border-radius: 12px;
       box-shadow: var(--card-shadow);
-      padding: 0 !important;
+      border: 1px solid var(--border-color);
+      padding: 1.25rem;
       margin-bottom: 2rem;
 
       @media (max-width: 768px) {
-        padding: 1.5rem;
+        padding: 1rem;
       }
     }
 
     .experience-list, .education-list {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      gap: 1.25rem;
     }
   }
+}
+
+.loading-state, .error-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  text-align: center;
+}
+
+.loading-spinner {
+  span[nz-icon] {
+    font-size: 48px;
+    color: var(--primary-color);
+    animation: spin 1s linear infinite;
+  }
+
+  p {
+    margin-top: 16px;
+    color: var(--text-color-secondary);
+    font-size: 16px;
+  }
+}
+
+.error-state {
+  span[nz-icon] {
+    font-size: 48px;
+    color: var(--error-color);
+    margin-bottom: 16px;
+  }
+
+  p {
+    margin: 16px 0;
+    color: var(--text-color-secondary);
+    font-size: 16px;
+  }
+
+  button {
+    margin-top: 16px;
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }

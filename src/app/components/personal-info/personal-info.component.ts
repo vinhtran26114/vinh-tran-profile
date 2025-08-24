@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { NzTagModule } from 'ng-zorro-antd/tag';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzModalModule, NzModalService } from 'ng-zorro-antd/modal';
 import { PersonalInfo } from '../../models/cv.models';
 import { TranslateModule } from '@ngx-translate/core';
@@ -16,6 +18,8 @@ import { TranslateModule } from '@ngx-translate/core';
     NzTypographyModule, 
     NzTagModule,
     NzModalModule,
+    NzToolTipModule,
+    NzButtonModule,
     TranslateModule
   ],
   templateUrl: './personal-info.component.html',
@@ -23,6 +27,8 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class PersonalInfoComponent {
   @Input() info?: PersonalInfo;
+  copiedEmail = false;
+  copiedPhone = false;
 
   constructor(private modalService: NzModalService) {}
 
@@ -49,5 +55,20 @@ export class PersonalInfoComponent {
       nzMaskClosable: true,
       nzKeyboard: true
     });
+  }
+
+  copyToClipboard(text: string, kind: 'email' | 'phone') {
+    if (!text) return;
+    if (navigator && (navigator as any).clipboard && (navigator as any).clipboard.writeText) {
+      (navigator as any).clipboard.writeText(text).then(() => {
+        if (kind === 'email') {
+          this.copiedEmail = true;
+          setTimeout(() => (this.copiedEmail = false), 1500);
+        } else {
+          this.copiedPhone = true;
+          setTimeout(() => (this.copiedPhone = false), 1500);
+        }
+      });
+    }
   }
 } 
