@@ -19,6 +19,30 @@
         "Coordinate with Billing, EDI, and Ops to resolve issues and improve processes."
       ],
       "achievements": [
+        "2023: On-Site US, Philadelphia, supported initial demo session of Account Receivable Transformation (ART) to stakeholders.",
+        "2024: Delivered the ART project with CES Vietnam and Capco India under a waterfall model.",
+        "2025: Leading the Change of Ownership logic redesign to improve billing accuracy.",
+        "Reduced billing mismatches by refining COO and DST rules.",
+        "Cut rework by delivering structured BRs and ACs and verifying fixes with SQL."
+      ]
+    },
+    {
+      "company": "Customized Energy Solutions/BLUE",
+      "position": "Senior Software Engineer",
+      "location": "Remote",
+      "type": "Full-time",
+      "startDate": "Feb 2022",
+      "endDate": "Aug 2023",
+      "companyInfo": {
+        "description": "Customized Energy Solutions is a leading energy consulting firm that provides innovative solutions to energy challenges. They specialize in market operations, demand response, and energy storage solutions.",
+        "address": "123 Energy Lane, Philadelphia, PA, USA",
+        "website": "https://www.ces-ltd.com",
+        "contact": "+1 215-875-9440"
+      },
+      "responsibilities": [
+        "Maintained the Billing Load Usage and EDI system (BLUE)."
+      ],
+      "achievements": [
         "Achieved 120% of KPI performance in 2022."
       ]
     },

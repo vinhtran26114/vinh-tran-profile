@@ -19,6 +19,30 @@
         "Phối hợp với Billing, EDI và Ops để giải quyết vấn đề và cải thiện quy trình."
       ],
       "achievements": [
+        "2023: Tại chỗ ở Mỹ, Philadelphia, hỗ trợ buổi trình diễn ban đầu của Dự án Chuyển đổi Tài khoản Phải thu (ART) cho các bên liên quan.",
+        "2024: Triển khai dự án ART với CES Việt Nam và Capco Ấn Độ theo mô hình thác nước.",
+        "2025: Dẫn dắt việc tái thiết kế logic Chuyển đổi Quyền sở hữu để cải thiện độ chính xác của hóa đơn.",
+        "Giảm sai lệch hóa đơn bằng cách tinh chỉnh các quy tắc COO và DST.",
+        "Cắt giảm công việc lại bằng cách cung cấp các BR và AC có cấu trúc và xác minh các sửa lỗi bằng SQL."
+      ]
+    },
+    {
+      "company": "Customized Energy Solutions/BLUE",
+      "position": "Kỹ sư phần mềm cao cấp",
+      "location": "Làm việc từ xa",
+      "type": "Toàn thời gian",
+      "startDate": "Tháng 2/2022",
+      "endDate": "Tháng 8/2023",
+      "companyInfo": {
+        "description": "Customized Energy Solutions là công ty tư vấn năng lượng hàng đầu cung cấp các giải pháp sáng tạo cho các thách thức năng lượng. Họ chuyên về vận hành thị trường, phản hồi nhu cầu và giải pháp lưu trữ năng lượng.",
+        "address": "123 Energy Lane, Philadelphia, PA, USA",
+        "website": "https://www.ces-ltd.com",
+        "contact": "+1 215-875-9440"
+      },
+      "responsibilities": [
+        "Duy trì hệ thống Sử dụng Tải Billing và EDI (BLUE)."
+      ],
+      "achievements": [
         "Đạt 120% hiệu suất KPI trong năm 2022."
       ]
     },
@@ -45,4 +69,4 @@
       ]
     }
   ]
-} 
+}
