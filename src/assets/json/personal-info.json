@@ -1,0 +1,37 @@
+{
+  "prefix": "Mr.",
+  "name": "Vinh Tran",
+  "title": "Business Systems Analyst",
+  "dateOfBirth": "1995",
+  "location": {
+    "address": "",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam"
+  },
+  "contact": {
+    "phone": "0909359671",
+    "email": "vinhtran26114@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/vinh-trần-thanh-quang-85597a158/"
+  },
+  "languages": [
+    {
+      "name": "Vietnamese",
+      "level": "Native"
+    },
+    {
+      "name": "English",
+      "level": "Working Proficiency"
+    }
+  ],
+  "summary": "Business Systems Analyst who turns billing and EDI needs into working systems. I write clear requirements and acceptance criteria, use SQL to verify data, and keep Billing, EDI, Ops, and Dev aligned. Led the Account Receivable Transformation in 2023 with CES Vietnam and Capco. Now leading the Change of Ownership logic redesign to tighten billing accuracy. Former .NET and JavaScript developer; I still use that foundation to design practical integrations.",
+  "shortSummary": "Business Systems Analyst with expertise in billing and EDI systems. Strong focus on integration, data validation, and process improvement.",
+  "interests": [
+    "Integration",
+    "Data Validation",
+    "Process Improvement"
+  ],
+  "availability": {
+    "workType": "Full-time",
+    "workLocation": "Remote"
+  }
+}

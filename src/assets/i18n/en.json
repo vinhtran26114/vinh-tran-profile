@@ -1,0 +1,66 @@
+{
+  "NAV": {
+    "ABOUT": "About",
+    "EXPERIENCE": "Experience",
+    "PROJECTS": "Projects",
+    "SKILLS": "Skills",
+    "EXPORT_PDF": "Export PDF"
+  },
+  "FOOTER": {
+    "COPYRIGHT": "Vinh Tran. All rights reserved.",
+    "MADE_WITH": "Made with Angular & AI️"
+  },
+  "ACTIONS": {
+    "EXPORT_PDF": "Export PDF"
+  },
+  "PERSONAL_INFO": {
+    "PROFESSIONAL_SUMMARY": "Professional Summary",
+    "LANGUAGES": "Languages",
+    "AREAS_OF_INTEREST": "Areas of Interest",
+    "WORK_PREFERENCES": "Work Preferences"
+  },
+  "SECTIONS": {
+    "WORK_EXPERIENCE": {
+      "TITLE": "Work Experience",
+      "NOTABLE_ACHIEVEMENTS": "Notable Impact & Achievements",
+      "CORE_RESPONSIBILITIES": "Core Expertise & Responsibilities",
+      "ABOUT_COMPANY": "About Company"
+    },
+    "EDUCATION": "Education",
+    "TECHNICAL_SKILLS": "Technical Skills",
+    "FEATURED_PROJECTS": "Featured Projects",
+    "SUBTITLES": {
+      "WORK_EXPERIENCE": "Over a decade of proven expertise in web development and technical leadership",
+      "EDUCATION": "Strong academic foundation supporting technical excellence",
+      "TECHNICAL_SKILLS": "A comprehensive overview of my technical expertise",
+      "FEATURED_PROJECTS": "Specialized in Angular development with 6+ years of experience, and proficient in React with 4+ years of hands-on expertise"
+    }
+  },
+  "STATUS": {
+    "ACTIVE": "Active",
+    "COMPLETED": "Completed"
+  },
+  "PROJECTS": {
+    "SEARCH_PLACEHOLDER": "Search projects...",
+    "COUNT": {
+      "TOTAL": "Projects Available",
+      "FILTERED": "Projects Matching Criteria"
+    },
+    "NO_RESULTS": {
+      "TITLE": "No Projects Found",
+      "DESCRIPTION": "Try adjusting your search or filters to find what you're looking for."
+    },
+    "FILTERS": {
+      "TITLE": "Filter Projects",
+      "CLEAR_ALL": "Clear All",
+      "TECHNOLOGIES": "Technologies",
+      "PROJECT_SCOPE": "Project Scope",
+      "PROJECT_STATUS": "Project Status"
+    },
+    "VIEWS": {
+      "GRID": "Grid View",
+      "LIST": "List View"
+    },
+    "FILTER_BUTTON": "Filters"
+  }
+}

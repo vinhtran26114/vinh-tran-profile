@@ -1,0 +1,26 @@
+{
+  "skills": {
+    "phanTichKinhDoanhVaTichHop": [
+      "Yêu cầu kinh doanh",
+      "Tiêu chí chấp nhận",
+      "Hệ thống thanh toán",
+      "EDI 814, 820, 867",
+      "Tích hợp hệ thống"
+    ],
+    "kyThuat": [
+      "SQL cho xác thực và RCA",
+      ".NET (C#)",
+      "ASP.NET MVC",
+      "JavaScript (AngularJS, jQuery)",
+      "SQL Server",
+      "SSIS",
+      "Tích hợp API"
+    ],
+    "hopTac": [
+      "Dẫn dắt cuộc họp",
+      "Giao tiếp liên cá nhân",
+      "Dịch thuật kỹ thuật",
+      "Lãnh đạo nhóm"
+    ]
+  }
+} 

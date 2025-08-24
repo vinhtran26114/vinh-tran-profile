@@ -1,0 +1,9 @@
+<div class="project-count">
+  <span nz-icon nzType="appstore" nzTheme="outline"></span>
+  <strong>{{ filteredCount }}</strong>
+  @if (filteredCount !== totalCount) {
+    <span class="separator">/</span>
+    <span class="total">{{ totalCount }}</span>
+  }
+  <span class="label">{{ (filteredCount !== totalCount ? 'PROJECTS.COUNT.FILTERED' : 'PROJECTS.COUNT.TOTAL') | translate }}</span>
+</div> 

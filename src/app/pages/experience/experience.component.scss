@@ -1,0 +1,27 @@
+.experience-page {
+  padding: 0 1rem 2rem;
+  min-height: 100vh;
+  background-color: var(--background-color);
+
+  .container {
+    margin: 0 auto;
+
+    .section {
+      background-color: var(--component-background);
+      border-radius: 12px;
+      box-shadow: var(--card-shadow);
+      padding: 0 !important;
+      margin-bottom: 2rem;
+
+      @media (max-width: 768px) {
+        padding: 1.5rem;
+      }
+    }
+
+    .experience-list, .education-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+}

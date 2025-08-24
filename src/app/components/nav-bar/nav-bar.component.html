@@ -1,0 +1,39 @@
+<nav class="navbar">
+  <div class="container">
+    <div class="navbar-content">
+      <a class="navbar-brand" routerLink="/">
+        <span class="logo">VIN</span>
+      </a>
+
+      <div class="nav-content" [class.mobile-open]="isMobileMenuOpen">
+        <div class="nav-menu" [class.mobile]="isMobile">
+          <ul class="nav-links">
+            <li *ngFor="let item of navItems">
+              <a [routerLink]="item.path"
+                 routerLinkActive="active"
+                 [routerLinkActiveOptions]="{ exact: item.exact }"
+                 (click)="isMobile && closeMobileMenu()">
+                <span nz-icon [nzType]="item.icon" nzTheme="outline"></span>
+                {{ item.label | translate }}
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-actions" [class.mobile]="isMobile">
+          <app-export-pdf></app-export-pdf>
+          <app-language-switcher></app-language-switcher>
+        </div>
+      </div>
+
+      <button
+        class="mobile-menu-button"
+        nz-button
+        nzType="text"
+        (click)="toggleMobileMenu()"
+      >
+        <span nz-icon [nzType]="isMobileMenuOpen ? 'close' : 'menu'" nzTheme="outline"></span>
+      </button>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,8 @@
+<div class="section-header">
+  <h2>
+    <span nz-icon [nzType]="icon" nzTheme="outline"></span>
+    {{ title | translate }}
+  </h2>
+  <div class="section-subtitle" *ngIf="subtitle">{{ subtitle | translate }}</div>
+  <ng-content></ng-content>
+</div> 

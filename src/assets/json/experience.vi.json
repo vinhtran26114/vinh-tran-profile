@@ -1,0 +1,48 @@
+{
+  "workExperience": [
+    {
+      "company": "Customized Energy Solutions/BLUE",
+      "position": "Chuyên viên phân tích hệ thống kinh doanh (Tích hợp)",
+      "location": "Làm việc từ xa",
+      "type": "Toàn thời gian",
+      "startDate": "Tháng 8/2023",
+      "endDate": "Hiện tại",
+      "companyInfo": {
+        "description": "Customized Energy Solutions là công ty tư vấn năng lượng hàng đầu cung cấp các giải pháp sáng tạo cho các thách thức năng lượng. Họ chuyên về vận hành thị trường, phản hồi nhu cầu và giải pháp lưu trữ năng lượng.",
+        "address": "123 Energy Lane, Philadelphia, PA, USA",
+        "website": "https://www.ces-ltd.com",
+        "contact": "+1 215-875-9440"
+      },
+      "responsibilities": [
+        "Viết yêu cầu kinh doanh và tiêu chí chấp nhận cho các dự án tích hợp.",
+        "Xác thực luồng dữ liệu và sửa lỗi bằng SQL trong QA, UAT và Sản xuất.",
+        "Phối hợp với Billing, EDI và Ops để giải quyết vấn đề và cải thiện quy trình."
+      ],
+      "achievements": [
+        "Đạt 120% hiệu suất KPI trong năm 2022."
+      ]
+    },
+    {
+      "company": "NOIS Co., Ltd.",
+      "position": "Nhà phát triển .NET / Trưởng nhóm",
+      "location": "Thành phố Hồ Chí Minh, Việt Nam",
+      "type": "Toàn thời gian",
+      "startDate": "Tháng 6/2016",
+      "endDate": "Tháng 2/2022",
+      "companyInfo": {
+        "description": "NOIS Co., Ltd. là công ty công nghệ chuyên về phát triển phần mềm và giải pháp CNTT. Họ tập trung vào việc cung cấp các sản phẩm và dịch vụ phần mềm chất lượng cao cho khách hàng trên toàn thế giới.",
+        "address": "456 Tech Street, Thành phố Hồ Chí Minh, Việt Nam",
+        "website": "https://www.nois.vn",
+        "contact": "+84 28 1234 5678"
+      },
+      "responsibilities": [
+        "Bắt đầu là thực tập sinh trong R&D ElasticSearch và NoSQL, được thăng chức lên Nhà phát triển vào năm 2017 và Trưởng nhóm vào năm 2018.",
+        "Thu thập yêu cầu trực tiếp từ khách hàng quốc tế và cung cấp các tính năng và sửa lỗi.",
+        "Dẫn dắt một nhóm 6 đến 8 nhà phát triển tập trung vào các hệ thống chăm sóc sức khỏe và chăm sóc người cao tuổi."
+      ],
+      "achievements": [
+        "Dẫn dắt phát triển hệ thống quản lý chăm sóc sức khỏe cải thiện chăm sóc bệnh nhân và hiệu quả hoạt động."
+      ]
+    }
+  ]
+} 

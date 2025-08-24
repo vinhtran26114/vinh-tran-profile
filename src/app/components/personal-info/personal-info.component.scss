@@ -1,0 +1,404 @@
+.personal-info {
+  background: transparent;
+  border-radius: 16px;
+
+  .info-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  // Profile Header
+  .profile-header {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    padding: 2rem;
+    background: transparent;
+    border-radius: 12px;
+
+    .avatar-container {
+      flex-shrink: 0;
+
+      .avatar {
+        width: 160px;
+        height: 160px;
+        border-radius: 12px;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+
+        &:hover {
+          transform: scale(1.02);
+
+          .avatar-overlay {
+            opacity: 1;
+          }
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .avatar-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.4);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          opacity: 0;
+          transition: opacity 0.2s ease;
+
+          span {
+            color: white;
+            font-size: 24px;
+          }
+        }
+      }
+    }
+
+    .name-title {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin: 0;
+        line-height: 1.2;
+
+        .name-prefix {
+          color: #64748b;
+          font-weight: 500;
+          margin-right: 0.5rem;
+        }
+      }
+
+      h2 {
+        font-size: 1.25rem;
+        color: #3498db;
+        margin: 0.5rem 0 1rem;
+        font-weight: 500;
+      }
+
+      .location {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #64748b;
+        font-size: 1rem;
+
+        span[nz-icon] {
+          color: #94a3b8;
+        }
+      }
+    }
+  }
+
+  // Contact Grid
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background: transparent;
+    border-radius: 12px;
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      background: #ffffff;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      color: inherit;
+      border-bottom: 3px solid #1990ff;
+
+      &:hover {
+        opacity: 0.8;
+        transform: translateY(-4px);
+      }
+
+      span[nz-icon] {
+        font-size: 1.5rem;
+        color: #3498db;
+      }
+
+      .contact-details {
+        display: flex;
+        flex-direction: column;
+
+        .label {
+          font-size: 0.875rem;
+          color: #64748b;
+          margin-bottom: 0.25rem;
+        }
+
+        .value {
+          color: #1a1a1a;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  // Professional Summary
+  .professional-summary {
+    margin-bottom: 2.5rem;
+    padding: 2rem;
+    background: transparent;
+    border-radius: 12px;
+
+    h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.25rem;
+      color: #1a1a1a;
+      margin: 0 0 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #e2e8f0;
+
+      span[nz-icon] {
+        color: #3498db;
+        font-size: 1.25rem;
+      }
+    }
+
+    p {
+      color: #4a5568;
+      line-height: 1.8;
+      margin: 0;
+      font-size: 1.05rem;
+    }
+  }
+
+  // Additional Info
+  .additional-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+
+    .info-section {
+      padding: 2rem;
+      background: transparent;
+      border-radius: 12px;
+
+      h3 {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 1.25rem;
+        color: #1a1a1a;
+        margin: 0 0 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #e2e8f0;
+
+        span[nz-icon] {
+          color: #3498db;
+          font-size: 1.25rem;
+        }
+      }
+
+      .language-grid {
+        display: grid;
+        gap: 1rem;
+
+        .language-item {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0.75rem;
+          border-radius: 8px;
+
+          .lang-name {
+            color: #1a1a1a;
+            font-weight: 500;
+          }
+        }
+      }
+
+      .interests-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+
+        ::ng-deep .ant-tag {
+          margin: 0;
+          padding: 0.5rem 1rem;
+          font-size: 0.9rem;
+          border-radius: 6px;
+          background: #f8fafc;
+          border: none;
+          color: #1a1a1a;
+          transition: all 0.2s ease;
+
+          &:hover {
+            background: #f1f5f9;
+            transform: translateY(-1px);
+          }
+        }
+      }
+
+      .work-preferences {
+        display: flex;
+        gap: 0.75rem;
+        margin-top: 1rem;
+
+        ::ng-deep .ant-tag {
+          margin: 0;
+          padding: 0.5rem 1rem;
+          font-size: 0.95rem;
+          border-radius: 6px;
+          cursor: default;
+
+          &:hover {
+            opacity: 0.9;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .personal-info {
+    .info-container {
+      padding: 0 1rem;
+    }
+
+    .profile-header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.5rem;
+      padding: 1.5rem 1rem;
+
+      .avatar-container {
+        .avatar {
+          width: 140px;
+          height: 140px;
+          margin: 0 auto;
+        }
+      }
+
+      .name-title {
+        h1 {
+          font-size: 2rem;
+        }
+
+        h2 {
+          font-size: 1.1rem;
+        }
+
+        .location {
+          justify-content: center;
+        }
+      }
+    }
+
+    .contact-grid {
+      grid-template-columns: 1fr;
+      padding: 1rem;
+      gap: 1rem;
+
+      .contact-item {
+        padding: 0.75rem;
+
+        span[nz-icon] {
+          font-size: 1.25rem;
+        }
+
+        .contact-details {
+          .label {
+            font-size: 0.8rem;
+          }
+
+          .value {
+            font-size: 0.95rem;
+          }
+        }
+      }
+    }
+
+    .professional-summary {
+      padding: 1.5rem 1rem;
+
+      h3 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.75rem;
+
+        span[nz-icon] {
+          font-size: 1.1rem;
+        }
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+    }
+
+    .additional-info {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+
+      .info-section {
+        padding: 1.5rem 1rem;
+
+        h3 {
+          font-size: 1.1rem;
+          margin-bottom: 1rem;
+          padding-bottom: 0.75rem;
+
+          span[nz-icon] {
+            font-size: 1.1rem;
+          }
+        }
+
+        .language-grid {
+          .language-item {
+            padding: 0.5rem;
+            
+            .lang-name {
+              font-size: 0.95rem;
+            }
+          }
+        }
+
+        .interests-grid {
+          justify-content: center;
+
+          ::ng-deep .ant-tag {
+            padding: 0.4rem 0.75rem;
+            font-size: 0.85rem;
+          }
+        }
+
+        .work-preferences {
+          justify-content: flex-start;
+          gap: 0.5rem;
+          margin-top: 0.75rem;
+
+          ::ng-deep .ant-tag {
+            padding: 0.4rem 0.75rem;
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+}

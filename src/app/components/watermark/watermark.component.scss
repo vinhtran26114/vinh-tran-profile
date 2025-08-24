@@ -1,0 +1,51 @@
+@keyframes float {
+  0% {
+    transform: translate(0, 0) rotate(15deg);
+    opacity: 0.02;
+  }
+  50% {
+    transform: translate(0, -10px) rotate(15deg);
+    opacity: 0.04;
+  }
+  100% {
+    transform: translate(0, 0) rotate(15deg);
+    opacity: 0.02;
+  }
+}
+
+@keyframes iconFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.watermark-container {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  pointer-events: none;
+  z-index: -1;
+  animation: float 6s ease-in-out infinite;
+
+  span[nz-icon] {
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 100%;
+    height: 100%;
+    color: #004d93;
+    animation: iconFade 0.5s ease-out;
+
+    // Add animation when icon changes
+    &.profile {
+      transition: all 0.3s ease-out;
+    }
+  }
+}

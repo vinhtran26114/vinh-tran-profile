@@ -1,0 +1,145 @@
+<div class="experience-card" (click)="openCompanyDialog()">
+  <div class="card-header">
+    <div class="company-info">
+      <div class="company-logo">
+        <img [src]="'assets/images/companies/' + getCompanyLogo(experience.company)" [alt]="experience.company + ' logo'" 
+             onError="this.src='assets/images/companies/default-company.svg'"/>
+      </div>
+      <div class="position-company">
+        <h3>{{ experience.position }}</h3>
+        <div class="company">{{ experience.company }}</div>
+      </div>
+    </div>
+    <div class="meta-info">
+      <div class="meta-item">
+        <span nz-icon nzType="calendar" nzTheme="outline"></span>
+        {{ experience.startDate }} - {{ experience.current ? ('COMMON.PRESENT' | translate) : experience.endDate }}
+      </div>
+      <div class="meta-item">
+        <span nz-icon nzType="environment" nzTheme="outline"></span>
+        {{ experience.location }}
+      </div>
+      <div class="meta-item">
+        <span nz-icon nzType="team" nzTheme="outline"></span>
+        {{ experience.type }}
+      </div>
+    </div>
+  </div>
+
+  <div class="decorative-line"></div>
+
+  <div class="card-content">
+    @if (experience.achievements?.length) {
+      <div class="achievements">
+        <h4>{{ 'SECTIONS.WORK_EXPERIENCE.NOTABLE_ACHIEVEMENTS' | translate }}</h4>
+        <ul>
+          @for (achievement of experience.achievements; track achievement) {
+            <li>
+              <span nz-icon nzType="trophy" nzTheme="outline"></span>
+              {{ achievement }}
+            </li>
+          }
+        </ul>
+      </div>
+    }
+
+    @if (experience.responsibilities?.length) {
+      <div class="responsibilities">
+        <h4>{{ 'SECTIONS.WORK_EXPERIENCE.CORE_RESPONSIBILITIES' | translate }}</h4>
+        <ul>
+          @for (responsibility of experience.responsibilities; track responsibility) {
+            <li>
+              <span nz-icon nzType="check-circle" nzTheme="outline"></span>
+              {{ responsibility }}
+            </li>
+          }
+        </ul>
+      </div>
+    }
+  </div>
+</div>
+
+<!-- Company Detail Dialog -->
+<ng-template #companyDetailDialog>
+  <div class="company-detail-dialog">
+    <app-watermark class="dialog-watermark" [customIcon]="'bank'"></app-watermark>
+    <div class="dialog-header">
+      <div class="company-logo">
+        <img [src]="'assets/images/companies/' + getCompanyLogo(experience.company)" 
+             [alt]="experience.company + ' logo'"
+             onError="this.src='assets/images/companies/default-company.svg'"/>
+      </div>
+      <div class="company-info">
+        <h2>{{ experience.company }}</h2>
+        <h3 class="position">{{ experience.position }}</h3>
+        <div class="meta-info">
+          <div class="duration">
+            <span nz-icon nzType="calendar" nzTheme="outline"></span>
+            {{ experience.startDate }} - {{ experience.current ? ('COMMON.PRESENT' | translate) : experience.endDate }}
+          </div>
+          <div class="meta-tags">
+            <nz-tag [nzColor]="'blue'">{{ experience.type }}</nz-tag>
+            <nz-tag [nzColor]="'green'">{{ experience.location }}</nz-tag>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    @if (experience.achievements?.length) {
+      <div class="dialog-section">
+        <h3>
+          <span nz-icon nzType="trophy" nzTheme="outline"></span>
+          {{ 'SECTIONS.WORK_EXPERIENCE.NOTABLE_ACHIEVEMENTS' | translate }}
+        </h3>
+        <ul>
+          @for (achievement of experience.achievements; track achievement) {
+            <li>{{ achievement }}</li>
+          }
+        </ul>
+      </div>
+    }
+
+    @if (experience.responsibilities?.length) {
+      <div class="dialog-section">
+        <h3>
+          <span nz-icon nzType="check-circle" nzTheme="outline"></span>
+          {{ 'SECTIONS.WORK_EXPERIENCE.CORE_RESPONSIBILITIES' | translate }}
+        </h3>
+        <ul>
+          @for (responsibility of experience.responsibilities; track responsibility) {
+            <li>{{ responsibility }}</li>
+          }
+        </ul>
+      </div>
+    }
+
+    <!-- Company Information Section -->
+    @if (experience.companyInfo) {
+      <div class="dialog-section company-details">
+        <h3>
+          <span nz-icon nzType="bank" nzTheme="outline"></span>
+          {{ 'SECTIONS.WORK_EXPERIENCE.ABOUT_COMPANY' | translate }}
+        </h3>
+        <div class="company-description">
+          {{ experience.companyInfo.description }}
+        </div>
+        <div class="company-contact-info">
+          <div class="contact-item">
+            <span nz-icon nzType="environment" nzTheme="outline"></span>
+            {{ experience.companyInfo.address }}
+          </div>
+          <div class="contact-item">
+            <span nz-icon nzType="global" nzTheme="outline"></span>
+            <a [href]="experience.companyInfo.website" target="_blank">{{ experience.companyInfo.website }}</a>
+          </div>
+          @if (experience.companyInfo.contact) {
+            <div class="contact-item">
+              <span nz-icon nzType="phone" nzTheme="outline"></span>
+              {{ experience.companyInfo.contact }}
+            </div>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</ng-template> 

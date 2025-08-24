@@ -1,0 +1,26 @@
+{
+  "technicalSkills": {
+    "businessAnalysisAndIntegration": [
+      "Business Requirements",
+      "Acceptance Criteria",
+      "Billing Systems",
+      "EDI 814, 820, 867",
+      "System Integration"
+    ],
+    "technical": [
+      "SQL for validation and RCA",
+      ".NET (C#)",
+      "ASP.NET MVC",
+      "JavaScript (AngularJS, jQuery)",
+      "SQL Server",
+      "SSIS",
+      "API Integration"
+    ],
+    "collaboration": [
+      "Leading Meetings",
+      "Interpersonal Communication",
+      "Technical Translation",
+      "Team Leadership"
+    ]
+  }
+}

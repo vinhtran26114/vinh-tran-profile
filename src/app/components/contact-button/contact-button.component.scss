@@ -1,0 +1,105 @@
+@keyframes shake {
+  0%, 100% {
+    transform: rotate(0) scale(1) translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: rotate(-10deg) scale(1.2) translateX(-3px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: rotate(10deg) scale(1.2) translateX(3px);
+  }
+  15%, 35%, 55%, 75%, 95% {
+    transform: rotate(-5deg) scale(1.15) translateX(-1.5px);
+  }
+  25%, 45%, 65%, 85% {
+    transform: rotate(5deg) scale(1.15) translateX(1.5px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(24, 144, 255, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(24, 144, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(24, 144, 255, 0);
+  }
+}
+
+.contact-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background-color: #1890ff;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  z-index: 1000;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+    .tooltip {
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+    }
+
+    &:not(.shake) {
+      animation: shake 1s ease-in-out, pulse 1s ease-in-out infinite;
+    }
+  }
+
+  &.shake {
+    animation: shake 1s ease-in-out, pulse 1s ease-in-out infinite;
+  }
+
+  span[nz-icon] {
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .tooltip {
+    position: absolute;
+    top: -2.5rem;
+    background-color: #000;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 5px 5px 0;
+      border-style: solid;
+      border-color: #000 transparent transparent;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-button {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+}

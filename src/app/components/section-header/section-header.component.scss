@@ -1,0 +1,24 @@
+.section-header {
+  margin-bottom: 2rem;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+
+    [nz-icon] {
+      font-size: 1.75rem;
+      color: var(--primary-color);
+    }
+  }
+
+  .section-subtitle {
+    margin-top: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,321 @@
+.experience-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid #edf0f2;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    background: #f0f7ff;
+    border-color: #1890ff;
+
+    .card-header {
+      background: rgba(24, 144, 255, 0.05);
+    }
+
+    .company-logo {
+      transform: scale(1.05);
+    }
+
+    .decorative-line {
+      background: #1890ff;
+      width: 100%;
+    }
+  }
+
+  .card-header {
+    padding: 1.5rem;
+    transition: background 0.3s ease;
+  }
+
+  .company-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+    .company-logo {
+      width: 60px;
+      height: 60px;
+      padding: 0.75rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .position-company {
+      h3 {
+        margin: 0;
+        font-size: 1.1rem;
+        color: #1890ff;
+      }
+
+      .company {
+        color: #666;
+        font-size: 0.95rem;
+        margin-top: 0.25rem;
+      }
+    }
+  }
+
+  .meta-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #666;
+      font-size: 0.9rem;
+
+      [nz-icon] {
+        color: #1890ff;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .decorative-line {
+    height: 2px;
+    width: 15%;
+    background: #edf0f2;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+  }
+
+  .card-content {
+    padding: 1.5rem;
+
+    h4 {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0 0 1rem;
+      color: #1890ff;
+      font-size: 1rem;
+    }
+
+    .achievements, .responsibilities {
+      &:not(:last-child) {
+        margin-bottom: 1.5rem;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          display: flex;
+          align-items: flex-start;
+          gap: 0.75rem;
+          margin-bottom: 0.75rem;
+          padding-left: 0.5rem;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          [nz-icon] {
+            color: #1890ff;
+            font-size: 1rem;
+            margin-top: 0.2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Dialog Styles
+.company-detail-dialog {
+  position: relative;
+  overflow: hidden;
+  max-width: 800px;
+  padding: 0;
+
+  .dialog-watermark {
+    position: absolute;
+    top: 50%;
+    right: -100px;
+    transform: translateY(-50%);
+    z-index: 0;
+    opacity: 0.03;
+    pointer-events: none;
+
+    ::ng-deep .watermark-container {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      animation: none !important;
+      transform: rotate(15deg);
+    }
+  }
+
+  .dialog-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: #1890ff;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    .company-logo {
+      width: 100px;
+      height: 100px;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      flex-shrink: 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .company-info {
+      flex: 1;
+
+      h2 {
+        margin: 0 0 0.5rem;
+        font-size: 1.75rem;
+        color: white;
+      }
+
+      .position {
+        margin: 0 0 1rem;
+        font-size: 1.25rem;
+        font-weight: normal;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .meta-info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+
+        .duration {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          color: rgba(255, 255, 255, 0.9);
+          font-size: 0.9rem;
+
+          [nz-icon] {
+            color: rgba(255, 255, 255, 0.9);
+          }
+        }
+
+        .meta-tags {
+          display: flex;
+          gap: 0.5rem;
+        }
+      }
+    }
+  }
+
+  .dialog-section {
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #edf0f2;
+    background: white;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      color: #1890ff;
+      font-size: 1.1rem;
+
+      [nz-icon] {
+        font-size: 1.2rem;
+      }
+    }
+
+    &.company-details {
+      .company-description {
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      .company-contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+
+        .contact-item {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          color: #666;
+
+          [nz-icon] {
+            color: #1890ff;
+            font-size: 1rem;
+          }
+
+          a {
+            color: #1890ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+
+            &:hover {
+              color: #40a9ff;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: 0.5rem;
+        padding-left: 1.5rem;
+        position: relative;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0.5rem;
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: #1890ff;
+        }
+      }
+    }
+  }
+} 

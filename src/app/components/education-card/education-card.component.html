@@ -1,0 +1,87 @@
+<div class="education-card" (click)="openEducationDialog()">
+  <div class="card-header">
+    <div class="education-info">
+      <div class="degree-icon">
+        <span nz-icon nzType="book" nzTheme="outline"></span>
+      </div>
+      <div class="degree-details">
+        <h3>{{ education.degree }}</h3>
+        <div class="field">{{ education.description }}</div>
+        <div class="institution">
+          <span nz-icon nzType="bank" nzTheme="outline"></span>
+          {{ education.institution }}
+        </div>
+      </div>
+    </div>
+    <div class="meta-info">
+      <div class="meta-item">
+        <span nz-icon nzType="calendar" nzTheme="outline"></span>
+        {{ education.startDate }} - {{ education.endDate }}
+      </div>
+      @if (education.grade) {
+        <div class="meta-item">
+          <span nz-icon nzType="trophy" nzTheme="outline"></span>
+          {{ education.grade }}
+        </div>
+      }
+    </div>
+  </div>
+
+  <div class="decorative-line"></div>
+
+  @if (education.achievements?.length) {
+    <div class="card-content">
+      <div class="achievements">
+        <h4>{{ 'SECTIONS.EDUCATION.ACHIEVEMENTS' | translate }}</h4>
+        <ul>
+          @for (achievement of education.achievements; track achievement) {
+            <li>
+              <span nz-icon nzType="check-circle" nzTheme="outline"></span>
+              {{ achievement }}
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+  }
+</div>
+
+<!-- Education Detail Dialog -->
+<ng-template #educationDetailDialog>
+  <div class="education-detail-dialog">
+    <app-watermark class="dialog-watermark" [customIcon]="'book'"></app-watermark>
+    <div class="dialog-header">
+      <div class="degree-icon">
+        <span nz-icon nzType="book" nzTheme="outline"></span>
+      </div>
+      <div class="education-info">
+        <h2>{{ education.degree }}</h2>
+        <h3 class="field">{{ education.field }}</h3>
+        <div class="meta-info">
+          <div class="duration">
+            <span nz-icon nzType="calendar" nzTheme="outline"></span>
+            {{ education.startDate }} - {{ education.endDate }}
+          </div>
+          <div class="duration">
+            <span nz-icon nzType="bank" nzTheme="outline"></span>
+            {{ education.institution }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    @if (education.achievements?.length) {
+      <div class="dialog-section">
+        <h3>
+          <span nz-icon nzType="trophy" nzTheme="outline"></span>
+          {{ 'SECTIONS.EDUCATION.ACHIEVEMENTS' | translate }}
+        </h3>
+        <ul>
+          @for (achievement of education.achievements; track achievement) {
+            <li>{{ achievement }}</li>
+          }
+        </ul>
+      </div>
+    }
+  </div>
+</ng-template>

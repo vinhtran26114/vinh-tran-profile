@@ -1,0 +1,4 @@
+<button class="contact-button" [class.shake]="isShaking" (click)="contact()" *ngIf="cvService.cv()?.personalInfo?.contact">
+  <span nz-icon [nzType]="getIconType()" nzTheme="outline"></span>
+  <span class="tooltip">{{ getTooltipText() }}</span>
+</button>

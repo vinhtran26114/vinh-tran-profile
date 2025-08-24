@@ -1,0 +1,134 @@
+// Variables
+$navbar-height: 70px;
+$navbar-height-scrolled: 60px;
+$container-max-width: 1200px;
+$border-radius: 8px;
+$transition: all 0.3s ease;
+
+// Colors
+$color-primary: var(--primary-color);
+$color-text: #262626;
+$color-text-secondary: #595959;
+$color-text-light: #8c8c8c;
+$color-border: #e8e8e8;
+$color-bg-hover: rgba(0, 0, 0, 0.04);
+$color-bg-active: #e6f7ff;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin icon-button {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  @include flex-center;
+  border-radius: $border-radius;
+  transition: $transition;
+  color: $color-text-secondary;
+
+  &:hover {
+    color: $color-primary;
+    background: $color-bg-hover;
+  }
+}
+
+// Layout
+.main-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  main {
+    flex: 1;
+    padding: 2rem 0;
+  }
+
+  .content-wrapper {
+    animation: fadeIn 0.5s ease-out;
+  }
+}
+
+.footer {
+  background: var(--card-bg);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 1.5rem 0;
+  margin-top: auto;
+  z-index: 2;
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      margin: 0;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+
+      .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: var(--primary-lightest);
+        color: var(--primary-color);
+        transition: all 0.2s ease;
+
+        &:hover {
+          background: var(--primary-lighter);
+          transform: translateY(-2px);
+        }
+
+        [nz-icon] {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+:host {
+  display: block;
+  min-height: 100vh;
+  padding-top: 64px; // Height of navbar
+}
+
+main {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 767px) {
+  :host {
+    padding-top: 56px; // Height of mobile navbar
+  }
+
+  main {
+    padding: 1.5rem 1rem;
+  }
+}

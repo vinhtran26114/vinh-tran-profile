@@ -1,0 +1,20 @@
+<div class="language-switcher">
+  <button 
+    nz-button 
+    nzType="text"
+    [nzDropdownMenu]="menu"
+    nz-dropdown
+    class="language-button"
+  >
+    <span class="flag">{{ getCurrentLanguageFlag() }}</span>
+    <span class="lang-code">{{ getCurrentLanguage().toUpperCase() }}</span>
+  </button>
+  <nz-dropdown-menu #menu="nzDropdownMenu">
+    <ul nz-menu>
+      <li nz-menu-item *ngFor="let lang of languages" (click)="switchLanguage(lang.code)">
+        <span class="flag">{{ lang.flag }}</span>
+        <span class="lang-name">{{ lang.name }}</span>
+      </li>
+    </ul>
+  </nz-dropdown-menu>
+</div> 

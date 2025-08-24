@@ -1,0 +1,38 @@
+.language-switcher {
+  display: inline-block;
+}
+
+.language-button {
+  padding: 4px 12px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 4px;
+  transition: all 0.3s;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.05);
+  }
+}
+
+.flag {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.lang-code {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.lang-name {
+  margin-left: 8px;
+  font-size: 14px;
+}
+
+[nz-menu-item] {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+} 

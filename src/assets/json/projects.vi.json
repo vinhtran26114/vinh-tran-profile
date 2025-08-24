@@ -1,0 +1,174 @@
+{
+  "projects": [
+    {
+      "name": "Hệ thống quản lý can thiệp",
+      "company": "NOIS",
+      "duration": "Tháng 1/2019 - Tháng 12/2019",
+      "description": "Giám sát can thiệp RF với KPI ăng-ten, dữ liệu phổ và bảng điều khiển trực quan.",
+      "scope": "Viễn thông",
+      "technologies": [
+        ".NET (C#)",
+        "ASP.NET MVC",
+        "SQL Server"
+      ],
+      "environment": [
+        "Visual Studio"
+      ],
+      "role": "Lập trình viên Full-stack",
+      "status": "completed"
+    },
+    {
+      "name": "Maison Sainte Claire",
+      "company": "NOIS",
+      "duration": "Tháng 2/2020 - Tháng 11/2020",
+      "description": "Nền tảng trường học tiếng Pháp cho giáo viên, học sinh, lịch trình và tiến độ học tập.",
+      "scope": "Giáo dục",
+      "technologies": [
+        ".NET (C#)",
+        "ASP.NET MVC",
+        "SQL Server"
+      ],
+      "environment": [
+        "Visual Studio"
+      ],
+      "role": "Lập trình viên Front-end",
+      "status": "completed"
+    },
+    {
+      "name": "Oracle CMS",
+      "company": "NOIS",
+      "duration": "Tháng 3/2021 - Tháng 8/2021",
+      "description": "Duy trì nền tảng Call Scripter tại chỗ, hướng dẫn các đại lý thông qua quy trình ghi nhật ký và quy trình leo thang sự cố.",
+      "scope": "Dịch vụ khách hàng",
+      "technologies": [
+        ".NET (C#)",
+        "ASP.NET MVC",
+        "SQL Server"
+      ],
+      "environment": [
+        "Visual Studio"
+      ],
+      "role": "Lập trình viên Back-end",
+      "status": "completed"
+    },
+    {
+      "name": "Smart Space Pro",
+      "company": "NOIS",
+      "duration": "Tháng 9/2021 - Tháng 2/2022",
+      "description": "Quản lý nơi làm việc và định vị đường đi với tự động hóa đặt chỗ và phân tích sử dụng.",
+      "scope": "Quản lý cơ sở",
+      "technologies": [
+        ".NET (C#)",
+        "ASP.NET MVC",
+        "SQL Server"
+      ],
+      "environment": [
+        "Visual Studio"
+      ],
+      "role": "Lập trình viên Full-stack",
+      "status": "completed"
+    },
+    {
+      "name": "Sapphire Care",
+      "company": "NOIS",
+      "duration": "Tháng 3/2022 - Tháng 8/2022",
+      "description": "Hệ thống chăm sóc người cao tuổi cho hồ sơ sức khỏe cư dân, báo cáo và quản lý nhân viên.",
+      "scope": "Chăm sóc sức khỏe",
+      "technologies": [
+        ".NET (C#)",
+        "ASP.NET MVC",
+        "SQL Server"
+      ],
+      "environment": [
+        "Visual Studio"
+      ],
+      "role": "Lập trình viên Front-end",
+      "status": "completed"
+    },
+    {
+      "name": "myPak Solutions",
+      "company": "NOIS",
+      "duration": "Tháng 9/2022 - Tháng 12/2022",
+      "description": "Quản lý thuốc hỗ trợ quản lý liều lượng với tích hợp nhà thuốc và hộp thuốc ảo.",
+      "scope": "Dược phẩm",
+      "technologies": [
+        ".NET (C#)",
+        "ASP.NET MVC",
+        "SQL Server"
+      ],
+      "environment": [
+        "Visual Studio"
+      ],
+      "role": "Lập trình viên Full-stack",
+      "status": "completed"
+    },
+    {
+      "name": "ART (Chuyển đổi Tài khoản Phải thu)",
+      "company": "Customized Energy Solutions",
+      "duration": "2023",
+      "description": "Một sáng kiến tài chính năm 2023 để tái cấu trúc quy trình hóa đơn đến tiền mặt, điều chỉnh đầu ra hóa đơn với Tài khoản Phải thu. Mục tiêu là đảm bảo hóa đơn, thanh toán và đối chiếu khớp nhau để Tài chính có thể đóng nhanh hơn với ít lỗi hơn. Tôi đã dẫn dắt dự án với CES Việt Nam và Capco theo mô hình thác nước, thiết kế lại logic phải thu, ứng dụng thanh toán và các bước đối chiếu để giảm sự không khớp và cải thiện độ chính xác của báo cáo.",
+      "scope": "Tài chính",
+      "technologies": [
+        "Yêu cầu Kinh doanh",
+        "Tiêu chí Chấp nhận",
+        "Hệ thống Hóa đơn"
+      ],
+      "environment": [
+        "Mô hình Thác nước"
+      ],
+      "role": "Trưởng dự án",
+      "status": "completed"
+    },
+    {
+      "name": "COO (Logic Thay đổi Quyền sở hữu)",
+      "company": "Customized Energy Solutions",
+      "duration": "2025",
+      "description": "Các quy tắc và quy trình xử lý các sự kiện chuyển vào và chuyển ra tài khoản để đảm bảo khách hàng đúng được tính phí cho đúng ngày và sử dụng. Mục đích là ngăn chặn các khoản phí trùng lặp, hóa đơn bị bỏ lỡ hoặc số dư bị áp dụng sai khi quyền sở hữu thay đổi. Năm 2025, tôi đã dẫn dắt việc thiết kế lại logic COO, tái cấu trúc xử lý ngày hiệu lực, phân bổ và xử lý sự kiện 814 để cải thiện độ tin cậy của hóa đơn và giảm lỗi chuyển tài khoản.",
+      "scope": "Hóa đơn",
+      "technologies": [
+        "Yêu cầu Kinh doanh",
+        "Tiêu chí Chấp nhận",
+        "Hệ thống Hóa đơn"
+      ],
+      "environment": [
+        "Mô hình Thác nước"
+      ],
+      "role": "Trưởng dự án",
+      "status": "completed"
+    },
+    {
+      "name": "EDI Mapping (814, 820, 867)",
+      "company": "Customized Energy Solutions",
+      "duration": "Đang diễn ra",
+      "description": "Lớp tích hợp dịch các giao dịch EDI tiện ích đầu vào và đầu ra và di chuyển chúng một cách an toàn qua các hệ thống. Mục đích của nó là giữ cho dữ liệu hóa đơn, sử dụng và thanh toán chính xác giữa CES và các tiện ích. Công việc của tôi bao gồm duy trì bản đồ EDI, xử lý mã hóa và giải mã (PGP/SFTP), và xác thực quy tắc lược đồ và kinh doanh với SQL, đảm bảo tích hợp sạch và đáng tin cậy trên các môi trường staging và production.",
+      "scope": "Tích hợp",
+      "technologies": [
+        "SQL",
+        "PGP/SFTP",
+        "Giao dịch EDI"
+      ],
+      "environment": [
+        "Staging và Production"
+      ],
+      "role": "Chuyên gia Tích hợp",
+      "status": "active"
+    },
+    {
+      "name": "BLUE (Hệ thống Hóa đơn Tải Sử dụng & EDI)",
+      "company": "Customized Energy Solutions",
+      "duration": "Đang diễn ra",
+      "description": "Nền tảng hóa đơn và sử dụng nội bộ của CES xử lý các giao dịch EDI 814, 820 và 867 cùng với dữ liệu sử dụng tải. Mục đích của BLUE là hoạt động như nguồn duy nhất cho sự thật về sử dụng và hóa đơn, đảm bảo rằng dữ liệu tiện ích đầu vào được xác thực và dịch chính xác trước khi nó thúc đẩy việc lập hóa đơn. Là một Kỹ sư Phần mềm, tôi đã duy trì và nâng cao BLUE bằng cách hỗ trợ tải dữ liệu hàng ngày, gỡ lỗi các vấn đề tích hợp và sử dụng SQL/SSIS để đảm bảo độ chính xác và ổn định trên các quy trình hóa đơn.",
+      "scope": "Hóa đơn và Sử dụng",
+      "technologies": [
+        "SQL",
+        "SSIS",
+        "Giao dịch EDI"
+      ],
+      "environment": [
+        "Quy trình Hóa đơn"
+      ],
+      "role": "Kỹ sư Phần mềm",
+      "status": "active"
+    }
+  ]
+}

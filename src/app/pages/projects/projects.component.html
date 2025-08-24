@@ -1,0 +1,166 @@
+<div [class]="config.className">
+  <div class="container" [style.maxWidth.px]="config.maxWidth">
+    <app-section-header 
+      title="SECTIONS.FEATURED_PROJECTS" 
+      icon="project"
+      subtitle="SECTIONS.SUBTITLES.FEATURED_PROJECTS">
+    </app-section-header>
+
+    <div class="count-wrapper">
+      <app-project-count
+        [filteredCount]="filteredProjects().length"
+        [totalCount]="projects().length"
+      ></app-project-count>
+    </div>
+
+    <!-- Toolbar Section -->
+    <div class="toolbar-section">
+      <div class="search-box">
+        <span nz-icon nzType="search" nzTheme="outline"></span>
+        <input 
+          type="text" 
+          [ngModel]="searchText()" 
+          [placeholder]="'PROJECTS.SEARCH_PLACEHOLDER' | translate"
+          (ngModelChange)="searchText.set($event)"
+        >
+        @if (searchText()) {
+          <button class="clear-search" (click)="searchText.set('')">
+            <span nz-icon nzType="close-circle" nzTheme="outline"></span>
+          </button>
+        }
+      </div>
+      <div class="view-controls">
+        <button 
+          class="view-toggle" 
+          [class.active]="viewType() === 'grid'"
+          (click)="setViewType('grid')" 
+          [title]="'PROJECTS.VIEWS.GRID' | translate"
+        >
+          <span nz-icon nzType="appstore" nzTheme="outline"></span>
+        </button>
+        <button 
+          class="view-toggle" 
+          [class.active]="viewType() === 'list'"
+          (click)="setViewType('list')" 
+          [title]="'PROJECTS.VIEWS.LIST' | translate"
+        >
+          <span nz-icon nzType="unordered-list" nzTheme="outline"></span>
+        </button>
+      </div>
+      <button 
+        class="filter-toggle" 
+        [class.active]="isFilterVisible()"
+        (click)="toggleFilters()" 
+        [title]="'PROJECTS.FILTERS.TITLE' | translate"
+      >
+        <span nz-icon nzType="filter" nzTheme="outline"></span>
+        {{ 'PROJECTS.FILTER_BUTTON' | translate }}
+        @if (selectedTechnologies().length || selectedScopes().length || selectedStatuses().length) {
+          <span class="filter-badge">{{ getTotalFiltersCount() }}</span>
+        }
+      </button>
+    </div>
+
+    <!-- Filter Section -->
+    <div class="filters-section" [class.visible]="isFilterVisible()">
+      <div class="filters-header">
+        <h3>{{ 'PROJECTS.FILTERS.TITLE' | translate }}</h3>
+        @if (selectedTechnologies().length || selectedScopes().length || selectedStatuses().length) {
+          <button class="clear-filters" (click)="clearFilters()">
+            <span nz-icon nzType="clear" nzTheme="outline"></span>
+            {{ 'PROJECTS.FILTERS.CLEAR_ALL' | translate }}
+          </button>
+        }
+      </div>
+
+      <!-- Technology Filters -->
+      <div class="filter-group">
+        <div class="group-header">
+          <span nz-icon nzType="code" nzTheme="outline"></span>
+          {{ 'PROJECTS.FILTERS.TECHNOLOGIES' | translate }}
+        </div>
+        <div class="filter-tags">
+          @for (tech of allTechnologies(); track tech) {
+            <div
+              class="filter-tag"
+              [class.active]="isTechnologySelected(tech)"
+              (click)="toggleTechnologyFilter(tech)"
+            >
+              <span nz-icon [nzType]="getTechnologyIcon(tech)" nzTheme="outline"></span>
+              {{ tech }}
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Scope Filters -->
+      @if (allScopes().length) {
+        <div class="filter-group">
+          <div class="group-header">
+            <span nz-icon nzType="aim" nzTheme="outline"></span>
+            {{ 'PROJECTS.FILTERS.PROJECT_SCOPE' | translate }}
+          </div>
+          <div class="filter-tags">
+            @for (scope of allScopes(); track scope) {
+              <div
+                class="filter-tag"
+                [class.active]="isScopeSelected(scope)"
+                (click)="toggleScopeFilter(scope)"
+              >
+                {{ scope }}
+              </div>
+            }
+          </div>
+        </div>
+      }
+
+      <!-- Status Filters -->
+      @if (allStatuses().length) {
+        <div class="filter-group">
+          <div class="group-header">
+            <span nz-icon nzType="check-circle" nzTheme="outline"></span>
+            {{ 'PROJECTS.FILTERS.PROJECT_STATUS' | translate }}
+          </div>
+          <div class="filter-tags">
+            @for (status of allStatuses(); track status) {
+              <div
+                class="filter-tag"
+                [class.active]="isStatusSelected(status)"
+                (click)="toggleStatusFilter(status)"
+              >
+                {{ status }}
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Projects Container -->
+    <div class="projects-container" [class.list-view]="viewType() === 'list'">
+      @if (filteredProjects().length) {
+        @for (project of filteredProjects(); track project) {
+          <app-project-detail
+            [project]="project"
+            [viewType]="viewType()"
+            [isExpanded]="isProjectExpanded(project)"
+            [selectedTechnologies]="selectedTechnologies()"
+            [highlightedText]="searchText()"
+            (toggleExpand)="toggleProjectExpansion(project)"
+            (technologyClick)="toggleTechnologyFilter($event)"
+          ></app-project-detail>
+        }
+      } @else {
+        <div class="no-results">
+          <span nz-icon nzType="inbox" nzTheme="outline"></span>
+          <h3>{{ 'PROJECTS.NO_RESULTS.TITLE' | translate }}</h3>
+          <p>{{ 'PROJECTS.NO_RESULTS.DESCRIPTION' | translate }}</p>
+          <button class="clear-filters" (click)="clearAllFilters()">
+            <span nz-icon nzType="clear" nzTheme="outline"></span>
+            {{ 'PROJECTS.FILTERS.CLEAR_ALL' | translate }}
+          </button>
+        </div>
+      }
+    </div>
+  </div>
+</div>

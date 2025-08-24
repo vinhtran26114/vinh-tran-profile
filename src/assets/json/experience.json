@@ -1,0 +1,48 @@
+{
+  "workExperience": [
+    {
+      "company": "Customized Energy Solutions/BLUE",
+      "position": "Business Systems Analyst (Integration)",
+      "location": "Remote",
+      "type": "Full-time",
+      "startDate": "Aug 2023",
+      "endDate": "Present",
+      "companyInfo": {
+        "description": "Customized Energy Solutions is a leading energy consulting firm that provides innovative solutions to energy challenges. They specialize in market operations, demand response, and energy storage solutions.",
+        "address": "123 Energy Lane, Philadelphia, PA, USA",
+        "website": "https://www.ces-ltd.com",
+        "contact": "+1 215-875-9440"
+      },
+      "responsibilities": [
+        "Write business requirements and acceptance criteria for integration projects.",
+        "Validate data flows and fixes using SQL in QA, UAT, and Production.",
+        "Coordinate with Billing, EDI, and Ops to resolve issues and improve processes."
+      ],
+      "achievements": [
+        "Achieved 120% of KPI performance in 2022."
+      ]
+    },
+    {
+      "company": "NOIS Co., Ltd.",
+      "position": ".NET Developer / Team Lead",
+      "location": "Ho Chi Minh City, Vietnam",
+      "type": "Full-time",
+      "startDate": "Jun 2016",
+      "endDate": "Feb 2022",
+      "companyInfo": {
+        "description": "NOIS Co., Ltd. is a technology company specializing in software development and IT solutions. They focus on delivering high-quality software products and services to clients worldwide.",
+        "address": "456 Tech Street, Ho Chi Minh City, Vietnam",
+        "website": "https://www.nois.vn",
+        "contact": "+84 28 1234 5678"
+      },
+      "responsibilities": [
+        "Started as an intern in ElasticSearch and NoSQL R&D, promoted to Developer in 2017 and Team Lead in 2018.",
+        "Collected requirements directly from international clients and delivered features and fixes.",
+        "Led a team of 6 to 8 developers focused on healthcare and aged care systems."
+      ],
+      "achievements": [
+        "Led the development of a healthcare management system that improved patient care and operational efficiency."
+      ]
+    }
+  ]
+}

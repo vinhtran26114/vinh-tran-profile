@@ -1,0 +1,38 @@
+Vinh Tran
+Business Systems Analyst / Ho Chi Minh City, Vietnam
+Email: vinhtran26114@gmail.com | LinkedIn 
+Summary
+Business Systems Analyst who turns billing and EDI needs into working systems. I write clear requirements and acceptance criteria, use SQL to verify data, and keep Billing, EDI, Ops, and Dev aligned. Led the Account Receivable Transformation in 2023 with CES Vietnam and Capco. Now leading the Change of Ownership logic redesign to tighten billing accuracy. Former .NET and JavaScript developer; I still use that foundation to design practical integrations.
+Experience
+Customized Energy Solutions/BLUE - Feb 2022 – Present
+Business Systems Analyst (Integration) | Aug 2023 – Present
+Write business requirements and acceptance criteria for integration projects.
+Validate data flows and fixes using SQL in QA, UAT, and Production.
+Coordinate with Billing, EDI, and Ops to resolve issues and improve processes.
+Software Engineer | Feb 2022 – Aug 2023
+Maintained the Billing Load Usage and EDI system (BLUE).
+Achieved 120% of KPI performance in 2022.
+Key achievements:
+2023: On-Site US, Philadelphia, supported initial demo session of Account Receivable Transformation (ART) to stakeholders.
+2024: Delivery the ART project with CES Vietnam and Capco India under a waterfall model.
+2025: Leading the Change of Ownership logic redesign to improve billing accuracy.
+Reduced billing mismatches by refining COO and DST rules.
+Cut rework by delivering structured BRs and ACs and verifying fixes with SQL.
+Tech stack:
+.NET (C#), SQL Server, SSIS, EDI workflowsSQL Server, SSIS, C#, Billing and EDI systems
+NOIS Co., Ltd. - NET Developer / Team Lead | Jun 2016 – Feb 2022
+Started as an intern in ElasticSearch and NoSQL R&D, promoted to Developer in 2017 and Team Lead in 2018. Collected requirements directly from international clients and delivered features and fixes. Led a team of 6 to 8 developers focused on healthcare and aged care systems.
+Attended projects:
+Interference Management System for Insightus. RF interference monitoring with antenna KPIs, spectrum data, and visual dashboards.
+Maison Sainte Claire. French language school platform for teachers, students, schedules, and learning progress.
+Oracle CMS, Philippines. Maintained the Call Scripter platform onsite, guiding agents through issue logging and escalation workflows.
+Smart Space Pro. Workplace management and wayfinding with booking automation and utilization analytics.
+Sapphire Care, BlueCross. Aged care system for resident health profiles, reporting, and staff management.
+myPak Solutions. Dose Administration Aid medication management with pharmacy integration and virtual pill box.
+Tech stack: .NET (C#), ASP.NET MVC, JavaScript (AngularJS, jQuery), SQL Server, SSIS, ElasticSearch, NoSQL
+Education
+HCMC Open University | Bachelor of Computer Science | 2013 – 2017
+Skills
+Business Analysis and Integration: Business Requirements, Acceptance Criteria, Billing Systems, EDI 814, 820, 867, System Integration.
+Technical: SQL for validation and RCA, .NET (C#), ASP.NET MVC, JavaScript (AngularJS, jQuery), SQL Server, SSIS, API Integration.
+Collaboration: Leading Meetings, Interpersonal Communication, Technical Translation, Team Leadership.

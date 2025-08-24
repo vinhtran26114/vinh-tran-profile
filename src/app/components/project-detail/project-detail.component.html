@@ -1,0 +1,141 @@
+<!-- Project Card -->
+<div class="project-card" [class.list-view]="viewType === 'list'" (click)="openProjectDialog()">
+  <app-watermark class="card-watermark" [customIcon]="'code-sandbox'"></app-watermark>
+  <!-- Project Header -->
+  <div class="project-header">
+    <div class="project-meta">
+      <div class="project-title-row">
+        <div class="project-title">
+          <h3 [innerHTML]="highlightText(project.name)"></h3>
+          <div class="project-tags">
+            @if (project.scope) {
+              <nz-tag class="scope-tag" [nzColor]="'blue'">{{ project.scope }}</nz-tag>
+            }
+            @if (project.status) {
+              <nz-tag class="status-tag" [nzColor]="getStatusColor(project.status)">{{ getStatusTranslationKey(project.status) | translate }}</nz-tag>
+            }
+          </div>
+        </div>
+      </div>
+      <p class="project-brief" [innerHTML]="highlightText(project.description)"></p>
+    </div>
+  </div>
+
+  <!-- Project Footer -->
+  <div class="project-footer">
+    <div class="tech-preview">
+      @if (viewType === 'list') {
+        @for (tech of project.technologies; track tech) {
+          <nz-tag 
+            class="tech-tag"
+            [nzColor]="selectedTechnologies.includes(tech) ? 'processing' : 'default'"
+            (click)="$event.stopPropagation(); technologyClick.emit(tech)"
+          >
+            <span [innerHTML]="highlightText(tech)"></span>
+          </nz-tag>
+        }
+      } @else {
+        @for (tech of project.technologies.slice(0, 2); track tech) {
+          <nz-tag 
+            class="tech-tag"
+            [nzColor]="selectedTechnologies.includes(tech) ? 'processing' : 'default'"
+            (click)="$event.stopPropagation(); technologyClick.emit(tech)"
+          >
+            <span [innerHTML]="highlightText(tech)"></span>
+          </nz-tag>
+        }
+        @if (project.technologies.length > 2) {
+          <span class="more-count">+{{ project.technologies.length - 2 }}</span>
+        }
+      }
+    </div>
+  </div>
+</div>
+
+<!-- Project Detail Dialog -->
+<ng-template #projectDetailDialog>
+  <div class="project-detail-dialog">
+    <app-watermark class="dialog-watermark" [customIcon]="'deployment-unit'"></app-watermark>
+    <div class="dialog-header">
+      <h2>{{ project.name }}</h2>
+      <div class="dialog-tags">
+        @if (project.scope) {
+          <nz-tag [nzColor]="'blue'">{{ project.scope }}</nz-tag>
+        }
+        @if (project.status) {
+          <nz-tag [nzColor]="getStatusColor(project.status)">{{ getStatusTranslationKey(project.status) | translate }}</nz-tag>
+        }
+      </div>
+    </div>
+
+    <div class="dialog-description">
+      <p>{{ project.description }}</p>
+    </div>
+
+    <div class="dialog-section">
+      <h3>
+        <span nz-icon nzType="code" nzTheme="outline"></span>
+        Technologies
+      </h3>
+      <div class="tech-tags">
+        @for (tech of project.technologies; track tech) {
+          <nz-tag 
+            [nzColor]="selectedTechnologies.includes(tech) ? 'processing' : 'default'"
+            (click)="$event.stopPropagation(); technologyClick.emit(tech)"
+          >
+            {{ tech }}
+          </nz-tag>
+        }
+      </div>
+    </div>
+
+    @if (project.environment?.length) {
+      <div class="dialog-section">
+        <h3>
+          <span nz-icon nzType="cluster" nzTheme="outline"></span>
+          Environments
+        </h3>
+        <div class="environments-list">
+          @for (env of project.environment; track env) {
+            <nz-tag>{{ env }}</nz-tag>
+          }
+        </div>
+      </div>
+    }
+
+    @if (project.responsibilities?.length) {
+      <div class="dialog-section">
+        <h3>
+          <span nz-icon nzType="check-circle" nzTheme="outline"></span>
+          Key Responsibilities
+        </h3>
+        <ul>
+          @for (resp of project.responsibilities; track resp) {
+            <li>{{ resp }}</li>
+          }
+        </ul>
+      </div>
+    }
+
+    @if (project.links?.length) {
+      <div class="dialog-section">
+        <h3>
+          <span nz-icon nzType="link" nzTheme="outline"></span>
+          Project Links
+        </h3>
+        <div class="link-list">
+          @for (link of project.links; track link) {
+            <a 
+              [href]="link.url" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <span nz-icon [nzType]="getLinkIcon(link.type)" nzTheme="outline"></span>
+              {{ link.label }}
+            </a>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</ng-template> 

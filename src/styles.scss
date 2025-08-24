@@ -1,0 +1,251 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'app/styles/fonts';
+@import "/node_modules/ng-zorro-antd/ng-zorro-antd.min.css";
+
+:root {
+  --primary-color: #0066cc;
+  --primary-light: #3399ff;
+  --primary-lighter: #66b3ff;
+  --primary-lightest: #e6f3ff;
+  --text-color: #1f2937;
+  --text-light: #4b5563;
+  --background: #f0f7ff;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --border-radius: 12px;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+html {
+  font-family: $primary-font;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background-color: #f0f7ff;
+  min-height: 100vh;
+  position: relative;
+  font-family: $primary-font;
+}
+
+// Override Ant Design font-family
+.ant-btn,
+.ant-input,
+.ant-select,
+.ant-modal-title,
+.ant-modal-content,
+.ant-dropdown-menu,
+.ant-menu {
+  font-family: $primary-font !important;
+}
+
+// Global card styles
+.card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+  }
+}
+
+// Section styles
+.section {
+  padding: 2rem;
+  margin-bottom: 2rem;
+  @extend .card;
+
+  &-header {
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--primary-lightest);
+    padding-bottom: 1rem;
+
+    h2 {
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 0;
+    }
+  }
+}
+
+// Grid system
+.grid {
+  display: grid;
+  gap: 1.5rem;
+
+  &-cols-1 { grid-template-columns: repeat(1, 1fr); }
+  &-cols-2 { grid-template-columns: repeat(2, 1fr); }
+  &-cols-3 { grid-template-columns: repeat(3, 1fr); }
+  &-cols-4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+// Responsive adjustments
+@media (max-width: 1024px) {
+  .grid-cols-4 { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .grid-cols-3, .grid-cols-4 { grid-template-columns: repeat(2, 1fr); }
+  .section { padding: 1.5rem; }
+}
+
+@media (max-width: 640px) {
+  .grid-cols-2, .grid-cols-3, .grid-cols-4 { grid-template-columns: 1fr; }
+  .section { padding: 1rem; }
+}
+
+// Animation classes
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Tag styles
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: var(--primary-lightest);
+  color: var(--primary-color);
+  margin: 0.25rem;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: var(--primary-lighter);
+  }
+}
+
+// Button styles
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+  gap: 0.5rem;
+
+  &-primary {
+    background-color: var(--primary-color);
+    color: white;
+
+    &:hover {
+      background-color: darken(#2563eb, 5%);
+    }
+  }
+
+  &-outline {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+
+    &:hover {
+      background-color: var(--primary-lightest);
+    }
+  }
+}
+
+// Link styles
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: darken(#2563eb, 10%);
+  }
+}
+
+// Container
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+// Utility classes
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.font-bold { font-weight: 700; }
+.font-semibold { font-weight: 600; }
+.text-sm { font-size: 0.875rem; }
+.text-lg { font-size: 1.125rem; }
+.text-xl { font-size: 1.25rem; }
+.text-2xl { font-size: 1.5rem; }
+.text-primary { color: var(--primary-color); }
+.text-light { color: var(--text-light); }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-8 { margin-bottom: 2rem; }
+.ant-modal-body {padding: 0;}
+
+// Avatar modal styles
+.avatar-modal {
+  .ant-modal-content {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .fullscreen-avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    
+    img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: var(--shadow-lg);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .avatar-modal {
+    .ant-modal-content {
+      margin: 0 16px;
+    }
+    
+    .fullscreen-avatar img {
+      max-width: calc(100vw - 32px);
+      max-height: 80vh;
+    }
+  }
+}

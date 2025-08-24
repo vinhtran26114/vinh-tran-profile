@@ -1,0 +1,20 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="copyright">
+        <p>© {{ currentYear }} {{ 'FOOTER.COPYRIGHT' | translate }}</p>
+        <p>{{ 'FOOTER.MADE_WITH' | translate }}</p>
+      </div>
+      <div class="social-links">
+        <a *ngFor="let link of socialLinks"
+           [href]="link.url"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="social-link"
+           [attr.aria-label]="link.label">
+          <span nz-icon [nzType]="link.icon" nzTheme="outline"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer> 

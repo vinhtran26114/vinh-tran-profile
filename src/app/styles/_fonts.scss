@@ -1,0 +1,151 @@
+// Font face declarations
+@font-face {
+  font-family: 'SourceSans3';
+  src: url('/assets/fonts/SourceSans3-Light.ttf') format('ttf');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SourceSans3';
+  src: url('/assets/fonts/SourceSans3-Regular.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SourceSans3';
+  src: url('/assets/fonts/SourceSans3-Medium.ttf') format('ttf');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SourceSans3';
+  src: url('/assets/fonts/SourceSans3-Semibold.ttf') format('ttf');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SourceSans3';
+  src: url('/assets/fonts/SourceSans3-Bold.ttf') format('ttf');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Font variables
+$primary-font: 'SourceSans3', sans-serif;
+$secondary-font: 'SourceSans3', sans-serif;
+
+// Language-specific mixins
+@mixin en-font {
+  font-family: $primary-font;
+}
+
+@mixin vi-font {
+  font-family: $primary-font;
+}
+
+// Font weights
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Font sizes
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-size-md: 1.125rem;
+$font-size-lg: 1.25rem;
+$font-size-xl: 1.5rem;
+$font-size-2xl: 1.875rem;
+$font-size-3xl: 2.25rem;
+
+// Line heights
+$line-height-tight: 1.25;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.75;
+
+// Language-specific classes
+:root[lang="en"] {
+  --primary-font: #{$primary-font};
+}
+
+:root[lang="vi"] {
+  --primary-font: #{$primary-font};
+}
+
+// Mixins for typography
+@mixin heading-1 {
+  font-family: var(--primary-font);
+  font-weight: $font-weight-bold;
+  font-size: $font-size-3xl;
+  line-height: $line-height-tight;
+}
+
+@mixin heading-2 {
+  font-family: var(--primary-font);
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-2xl;
+  line-height: $line-height-tight;
+}
+
+@mixin heading-3 {
+  font-family: var(--primary-font);
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-xl;
+  line-height: $line-height-tight;
+}
+
+@mixin body-text {
+  font-family: var(--primary-font);
+  font-weight: $font-weight-regular;
+  font-size: $font-size-base;
+  line-height: $line-height-normal;
+}
+
+@mixin small-text {
+  font-family: var(--primary-font);
+  font-weight: $font-weight-regular;
+  font-size: $font-size-sm;
+  line-height: $line-height-normal;
+}
+
+@mixin accent-text {
+  font-family: $secondary-font;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-base;
+  line-height: $line-height-normal;
+}
+
+// Shared section header styles
+.section-header {
+  margin-bottom: 2rem;
+
+  h2 {
+    font-size: 1.75rem;
+    color: var(--heading-color);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    [nz-icon] {
+      color: var(--primary-color);
+      font-size: 1.5rem;
+    }
+  }
+
+  .section-subtitle {
+    margin-top: 0.5rem;
+    color: var(--text-color-secondary);
+    font-size: 1rem;
+  }
+}

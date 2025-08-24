@@ -1,0 +1,333 @@
+.education-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid #edf0f2;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    background: #f0f7ff;
+    border-color: #1890ff;
+
+    .degree-icon {
+      transform: scale(1.05);
+    }
+
+    .decorative-line {
+      background: #1890ff;
+      width: 100%;
+    }
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+    .education-info {
+      display: flex;
+      gap: 1rem;
+      flex: 1;
+
+      .degree-icon {
+        width: 48px;
+        height: 48px;
+        background-color: #e6f7ff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        span[nz-icon] {
+          font-size: 24px;
+          color: #1890ff;
+        }
+      }
+
+      .degree-details {
+        flex: 1;
+
+        h3 {
+          margin: 0;
+          font-size: 1.1rem;
+          font-weight: 600;
+          color: #262626;
+        }
+
+        .field {
+          color: #595959;
+          margin: 0.25rem 0;
+        }
+
+        .institution {
+          color: #8c8c8c;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+
+          span[nz-icon] {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+
+    .meta-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      min-width: 150px;
+
+      .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #8c8c8c;
+
+        span[nz-icon] {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  .decorative-line {
+    height: 2px;
+    width: 15%;
+    background: #edf0f2;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+  }
+
+  .card-content {
+    .achievements {
+      h4 {
+        color: #262626;
+        margin-bottom: 0.75rem;
+        font-size: 1rem;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          display: flex;
+          align-items: flex-start;
+          gap: 0.5rem;
+          color: #595959;
+          margin-bottom: 0.5rem;
+
+          span[nz-icon] {
+            color: #52c41a;
+            margin-top: 0.25rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+:host ::ng-deep {
+  .education-detail-modal {
+    .ant-modal-content {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .ant-modal-body {
+      padding: 0;
+    }
+
+    .ant-modal-close {
+      top: 16px;
+      right: 16px;
+      color: #262626;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.06);
+      }
+    }
+  }
+}
+
+.education-detail-dialog {
+  position: relative;
+  padding: 2.5rem 3rem;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+
+  .dialog-watermark {
+    position: absolute;
+    right: -120px;
+    top: -120px;
+    opacity: 0.035;
+    transform: rotate(-15deg) scale(1.5);
+    pointer-events: none;
+  }
+
+  .dialog-header {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -1.5rem;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(to right,
+        rgba(24, 144, 255, 0.8) 0%,
+        rgba(24, 144, 255, 0.4) 50%,
+        rgba(24, 144, 255, 0) 100%
+      );
+    }
+
+    .degree-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #1890ff 0%, #096dd9 100%);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 16px rgba(24, 144, 255, 0.2);
+      transform: rotate(-5deg);
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: rotate(0deg);
+      }
+
+      span[nz-icon] {
+        font-size: 40px;
+        color: white;
+      }
+    }
+
+    .education-info {
+      flex: 1;
+
+      h2 {
+        margin: 0;
+        font-size: 2rem;
+        color: #262626;
+        font-weight: 600;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+      }
+
+      h3.field {
+        margin: 0.5rem 0 1rem;
+        font-size: 1.25rem;
+        color: #595959;
+        font-weight: normal;
+        opacity: 0.9;
+      }
+
+      .meta-info {
+        margin-top: 1.5rem;
+
+        .duration {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          color: #8c8c8c;
+          margin-bottom: 1rem;
+          font-size: 1.1rem;
+
+          span[nz-icon] {
+            font-size: 1.2rem;
+            color: #1890ff;
+          }
+        }
+
+        .meta-tags {
+          display: flex;
+          gap: 0.75rem;
+          flex-wrap: wrap;
+
+          nz-tag {
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 1rem;
+
+            &:hover {
+              transform: translateY(-1px);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .dialog-section {
+    margin-top: 2.5rem;
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+    h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: #262626;
+      margin-bottom: 1.5rem;
+      font-size: 1.3rem;
+      font-weight: 500;
+
+      span[nz-icon] {
+        color: #1890ff;
+        font-size: 1.4rem;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 1rem;
+
+      li {
+        color: #595959;
+        padding-left: 1.5rem;
+        position: relative;
+        line-height: 1.6;
+        font-size: 1.1rem;
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0.75rem;
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: linear-gradient(135deg, #1890ff 0%, #096dd9 100%);
+        }
+
+        &:hover {
+          color: #262626;
+          transform: translateX(2px);
+          transition: all 0.3s ease;
+
+          &::before {
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+  }
+}

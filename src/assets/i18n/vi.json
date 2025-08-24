@@ -1,0 +1,65 @@
+{
+  "NAV": {
+    "ABOUT": "Giới thiệu",
+    "EXPERIENCE": "Kinh nghiệm",
+    "PROJECTS": "Dự án",
+    "SKILLS": "Kỹ năng",
+    "EXPORT_PDF": "Xuất PDF"
+  },
+  "FOOTER": {
+    "COPYRIGHT": "Vinh Trần. Đã đăng ký bản quyền."
+  },
+  "ACTIONS": {
+    "EXPORT_PDF": "Xuất PDF"
+  },
+  "PERSONAL_INFO": {
+    "PROFESSIONAL_SUMMARY": "Tóm tắt chuyên môn",
+    "LANGUAGES": "Ngôn ngữ",
+    "AREAS_OF_INTEREST": "Lĩnh vực quan tâm",
+    "WORK_PREFERENCES": "Hình thức làm việc"
+  },
+  "SECTIONS": {
+    "WORK_EXPERIENCE": {
+      "TITLE": "Kinh nghiệm làm việc",
+      "NOTABLE_ACHIEVEMENTS": "Thành tựu & Tác động nổi bật",
+      "CORE_RESPONSIBILITIES": "Chuyên môn & Trách nhiệm chính",
+      "ABOUT_COMPANY": "Thông tin công ty"
+    },
+    "EDUCATION": "Học vấn",
+    "TECHNICAL_SKILLS": "Kỹ năng chuyên môn",
+    "FEATURED_PROJECTS": "Dự án tiêu biểu",
+    "SUBTITLES": {
+      "WORK_EXPERIENCE": "Hơn một thập kỷ kinh nghiệm trong phát triển web và lãnh đạo kỹ thuật",
+      "EDUCATION": "Nền tảng học vấn vững chắc hỗ trợ cho sự xuất sắc về kỹ thuật",
+      "TECHNICAL_SKILLS": "Tổng quan toàn diện về chuyên môn kỹ thuật của tôi",
+      "FEATURED_PROJECTS": "Chuyên sâu về phát triển Angular với hơn 6 năm kinh nghiệm, và thành thạo React với hơn 4 năm kinh nghiệm thực tế"
+    }
+  },
+  "STATUS": {
+    "ACTIVE": "Đang Thực Hiện",
+    "COMPLETED": "Đã Hoàn Thành"
+  },
+  "PROJECTS": {
+    "SEARCH_PLACEHOLDER": "Tìm kiếm dự án...",
+    "COUNT": {
+      "TOTAL": "Dự Án",
+      "FILTERED": "Dự Án Phù Hợp"
+    },
+    "NO_RESULTS": {
+      "TITLE": "Không Tìm Thấy Dự Án",
+      "DESCRIPTION": "Hãy thử điều chỉnh tìm kiếm hoặc bộ lọc để tìm thấy những gì bạn đang tìm kiếm."
+    },
+    "FILTERS": {
+      "TITLE": "Lọc Dự Án",
+      "CLEAR_ALL": "Xóa Tất Cả",
+      "TECHNOLOGIES": "Công Nghệ",
+      "PROJECT_SCOPE": "Phạm Vi Dự Án",
+      "PROJECT_STATUS": "Trạng Thái Dự Án"
+    },
+    "VIEWS": {
+      "GRID": "Xem Dạng Lưới",
+      "LIST": "Xem Dạng Danh Sách"
+    },
+    "FILTER_BUTTON": "Bộ Lọc"
+  }
+}
